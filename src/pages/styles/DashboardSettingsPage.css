@@ -1,0 +1,153 @@
+.settings-container {
+    min-height: 100vh;
+    width: 87%;
+    margin-left: 13%;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation: revealComponent .4s ease-in-out;
+}
+.settings-container * {
+    color: white;
+}
+.line-block-settings {
+    margin-bottom: 15px;
+}
+.settings-main-form {
+    width: 80%;
+    padding: 40px;
+    border-radius: var(--border-radius-box);
+    background-image: var(--green-gradient);
+}
+.settings-input-container {
+    width: 100%;
+    display: flex;
+    padding: 15px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+.settings-data-container {
+    height: 30px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.settings-data-icon {
+    width: 15px;
+    height: 15px;
+    border: none;
+    outline: none;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;background-color: transparent;
+}
+.edit-init {
+    background-image: url(/img/edit.png);
+}
+.edit-active {
+    background-image: url(/img/check.png);
+}
+.hide-settings-data-text {
+    display: none;
+}
+.settings-input-field {
+    padding: 5px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+    animation: revealComponent .3s ease-in-out;
+}
+.hide-settings-input-field {
+    display: none;
+}
+.show-settings-input-field {
+    display: block;
+    animation: revealComponent .3s ease-in-out;
+}
+.settings-input-file {
+    animation: revealComponent .3s ease-in-out;
+}
+.settings-input-file::file-selector-button {
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: var(--hover-green);
+    border-radius: var(--border-radius-box);
+}
+.settings-input-field::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+.settings-data-image {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.settings-data-image img {
+    height: 100%;
+}
+.settings-buttons-container {
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    visibility: hidden;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+.display-settings-buttons-container {
+    visibility: visible;
+    animation: revealComponent .3s ease-in-out;
+}
+.settings-page-button {
+    width: 30%;
+}
+@media ( max-width: 480px ) {
+    .settings-main-form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .settings-container {
+        width: 80%;
+        margin-left: 20%;
+    }
+    .settings-container * {
+        font-size: 12px;
+    }
+    .line-block-settings {
+        margin-bottom: 0;
+    }
+    .settings-input-container {
+        flex-direction: column;
+        padding: 10px;
+        border-radius: var(--border-radius-box);
+        background-color: rgba(136, 219, 211, .1);
+    }
+    .settings-label {
+        margin-bottom: 10px;
+    }
+    .settings-data-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .settings-buttons-container {
+        justify-content: space-between;
+    }
+    .settings-buttons-container .settings-page-button {
+        width: 40%;
+        font-size: 10px;
+    }
+}
+@media ( min-width: 481px ) and ( max-width: 1024px ) {
+    .settings-input-container {
+        padding: 15px 0;
+    }
+}

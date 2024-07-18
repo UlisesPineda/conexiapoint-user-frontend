@@ -1,0 +1,166 @@
+.dashboard-background {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: var(--maingradient-left);
+}
+.dashboard-navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 13%;
+    background-image: var(--green-gradient);
+    box-shadow: 6px 0px 5px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.dashboard-navbar-container * {
+    color: white;
+    font-size: 12px;
+}
+.dashboard-navbar-container {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    gap: 20px;
+}
+.avatar-container {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avatar-container img {
+    height: 100%;
+}
+.name-container {
+    width: 100%;
+}
+.enterprise-name,
+.user-name {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: var(--shadow-on-text);
+}
+.enterprise-name {
+    text-transform: uppercase;
+}
+.dashboard-links-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dashboard-links-container a {
+    gap: 10px;
+    display: flex;
+    padding: 7px 10px;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-between;
+    text-shadow: var(--shadow-on-text);
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+    transition: background-color .3s ease-in-out;
+}
+.icon-dashboard {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-size: cover;
+}
+.desk {
+    background-image: url(/img/dashboard-white.png);
+}
+.contact {
+    background-image: url(/img/contacts-white.png);
+}
+.calendar {
+    background-image: url(/img/calendar-white.png);
+}
+.setting {
+    background-image: url(/img/settings-white.png);
+}
+.feedback {
+    background-image: url(/img/feedback.png);
+}
+.logout {
+    height: 25px;
+    width: 25px;
+    display: none;
+    background-image: url(/img/logout.png);
+}
+.second-container {
+    width: 80%;
+}
+.logout-button {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-box);
+    background-color: var(--hover-green);
+    text-shadow: var(--shadow-on-text);
+    cursor: pointer;
+    box-shadow: var(--shadow-on-box);
+}
+@media ( max-width: 480px ) {
+    .dashboard-navbar-container {
+        width: 20%;
+    }
+    .avatar-container {
+        height: 50px;
+        width: 50px;
+    }
+    .logout {
+        display: block;
+    }
+    .enterprise-name,
+    .user-name,
+    .text-link,
+    .text-logout-button {
+        display: none;
+    }
+    .dashboard-links-container a {
+        justify-content: center;
+        align-items: center;
+    }
+    .logout {
+        margin-left: 5px;
+    }
+    .first-container,
+    .second-container {
+        width: 70%;
+    }
+}
+@media ( min-width: 481px ) and ( max-width: 1024px ) {
+    .avatar-container {
+        height: 70px;
+        width: 70px;
+    }
+    .icon-dashboard {
+        display: none;
+    }
+    .dashboard-navbar-container * {
+        font-size: 10px;
+    }    
+}

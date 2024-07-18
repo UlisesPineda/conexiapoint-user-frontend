@@ -1,0 +1,65 @@
+.feedback-container {
+    min-height: 100vh;
+    width: 87%;
+    margin-left: 13%;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation: revealComponent .4s ease-in-out;
+}
+.feedback-container * {
+    color: white;
+}
+.feedback-container p {
+    width: 80%;
+}
+.feedback-form-container {
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    padding: 40px;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    border-radius: var(--border-radius-box);
+    background-image: var(--green-gradient);
+}
+.feedback-form-container textarea {
+    padding: 5px;
+    width: 50%;
+}
+.feedback-form-container textarea {
+    resize: none;
+    height: 120px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+}
+.feedback-button {
+    width: 25%;
+}
+@media ( max-width: 480px ) {
+    .feedback-container {
+        width: 80%;
+        margin-left: 20%;
+    }
+    .feedback-container * {
+        font-size: 12px;
+    }
+    .feedback-button {
+        font-size: 10px;
+    }
+    .feedback-form-container {
+        padding: 20px;
+    }
+    .feedback-form-container textarea {
+        height: 100px;
+        width: 100%;
+    }
+    .feedback-form-container button {
+        width: 50%;
+    }
+}

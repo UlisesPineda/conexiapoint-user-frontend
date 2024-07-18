@@ -1,0 +1,202 @@
+.selected-contact-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--modal-gradient);
+    animation: revealComponent .3s ease-in forwards;
+}
+.selected-contact-container * {
+    color: white;
+}
+.selected-contact-container-closed {
+    animation: hideComponent .3s ease-out forwards;
+}
+.selected-contact-box {
+    height: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+    border-radius: var(--border-radius-box);
+    background-image: var(--green-gradient);
+    animation: revealComponent .3s ease-in;
+}
+.selected-contact-title,
+.selected-contact-data,
+.selected-contact-adress,
+.selected-contact-notes,
+.selected-contact-buttons {
+    display: flex;
+    width: 100%;
+}
+.title-label,
+.contact-adress-label,
+.contact-notes-label,
+.data-box-label {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+.data-box-data,
+.contact-adress-data {
+    display: flex;
+    align-items: center;
+    width: calc( 80% - 40px );
+}
+.title-text,
+.contact-adress-data,
+.data-box-data {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.title-text,
+.contact-notes-text {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.contact-notes-text {
+    height: auto;
+}
+.data-box-phone {
+    display: flex;
+    align-items: center;
+    width: calc( 80% - 80px );
+}
+.data-box-data,
+.data-box-phone {
+    display: flex;
+    align-items: center;
+}
+.data-box-container {
+    display: flex;
+    width: 100%;
+}
+.selected-contact-title,
+.selected-contact-adress,
+.selected-contact-notes,
+.data-box-container {
+    gap: 16px;
+}
+.data-box-data {
+    gap: 20px;
+    overflow: hidden;
+
+}
+.data-box-icon-container,
+.contact-adress-icon-container {
+    height: 24px;
+    width: 24px;
+    padding: 3px;
+    background-color: var(--hover-green);
+    border-radius: var(--border-radius-box);
+}
+.data-box-icon,
+.contact-adress-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.whatsapp {
+    background-image: url(/img/whatsapp.png);
+}
+.phone {
+    background-image: url(/img/phone.png);
+}
+.email {
+    background-image: url(/img/email.png);
+}
+.map {
+    background-image: url(/img/map.png);
+}
+.selected-contact-buttons {
+    justify-content: flex-end;
+    gap: 30px;
+}
+.selected-contact-btn {
+    width: 30%;
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+}
+@media ( max-width: 480px ) {
+    .selected-contact-box {
+        width: 90%;
+        padding: 30px;
+    }
+    .selected-contact-box * {
+        font-size: 10px;
+    }
+    .selected-contact-box span {
+        font-weight: normal;
+    }
+    .selected-contact-buttons {
+        justify-content: space-around;
+        gap: 15px;
+    }
+    .selected-contact-btn {
+        width: 30%;
+    }
+    .selected-contact-buttons * {
+        font-size: 10px;
+    }
+    .data-box-container {
+        justify-content: space-between;        
+    }
+    .data-box-icon-container,
+    .contact-adress-icon-container {
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+    }
+    .title-label,
+    .contact-adress-label,
+    .contact-notes-label,
+    .data-box-label {
+        width: 24%;
+        font-weight: 300;
+    }
+    .title-text,
+    .contact-notes-text {
+        width: 76%;
+    }
+    .data-box-data,
+    .contact-adress-data {
+        width: calc( 76% - 40px );
+    }
+    .data-box-phone {
+        width: calc( 76% - 80px );
+    }
+    .data-box-icon-container,
+    .contact-adress-icon-container {
+        height: 18px;
+        width: 18px;
+    }
+}
+@media ( min-width: 481px ) and ( max-width: 1024px ) {
+    .selected-contact-box {
+        width: 80%;
+    }
+}

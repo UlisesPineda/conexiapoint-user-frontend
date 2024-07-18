@@ -1,0 +1,124 @@
+.alert-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 20;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    background-image: var(--modal-gradient);
+    animation: bgcolorActive .3s ease-in-out forwards;
+}
+.alert-message-hide {
+    animation: bgcolorHide .3s ease-in-out forwards;
+}
+@keyframes bgcolorActive {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes bgcolorHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.message-container {
+    min-height: 40vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--green-gradient);
+    border-radius: var(--border-radius-box);
+}
+.message-container-active {
+    animation: revealMessageActive .3s ease-in-out forwards;
+}
+.message-container-hide {
+    animation: revealMessageHide .3s ease-in-out forwards;
+}
+@keyframes revealMessageActive {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes revealMessageHide {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+}
+.message-container big,
+.message-container p {
+    width: 80%;
+    text-align: center;
+}
+.message-container big {
+    font-size: 22px;
+}
+.message-container p {
+    font-size: 18px;
+}
+.message-container button {
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: var(--shadow-on-box);
+    text-shadow: var(--shadow-on-text);
+    background-color: var(--hover-green);
+    border-radius: var(--border-radius-box);
+}
+.alert-message-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+.hide-button {
+    display: none;
+}
+@media ( max-width: 480px ) {
+    .message-container {
+        width: 90%;
+    }
+    .message-container big {
+        font-size: 18px;
+    }
+    .message-container p {
+        font-size: 16px;
+    }
+    .message-container button {
+        font-size: 12px;
+    }
+}
+@media ( min-width: 481px ) and ( max-width: 1024px ) {
+    .message-container {
+        width: 70%;
+    }
+}

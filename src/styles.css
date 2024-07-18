@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --main-green: #88dbd3;
+  --hover-green: rgb(136, 219, 211, .8);
+  --purple-color: #A25ECA;
+  --border-radius-box: 5px;
+  --shadow-on-text: 3px 3px 2px rgba(8,53,143,0.4);
+  --shadow-on-box: 0px 3px 10px 0px rgba(8,53,143,1);
+  --maingradient-left: radial-gradient(circle 45vw at 70vw 29vw,#9803be,#8b05b5,#7f06ab,#7307a2,#670798);
+  --green-gradient: linear-gradient(to right bottom, #0195c5, #0081bf, #006db6, #0058aa, #17419a);
+  --modal-gradient: radial-gradient(circle, rgba(97,97,97,0.5) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple-color) var(--main-green);
+}
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-track {
+  background-color: var(--main-green);
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 1px solid var(--main-green);
+  background-color: var(--purple-color);
+}
+.active {
+  background-color: var(--hover-green);
+  filter: drop-shadow( 1px 1px 5px rgba(0,0,0,.7) );
+}
+@keyframes revealComponent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hideComponent {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+.secondary-button {
+  padding: 6px 0;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--main-green);
+  border-radius: var(--border-radius-box);
+}
+.form-button-disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}

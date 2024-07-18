@@ -1,0 +1,103 @@
+.form-event-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--modal-gradient);
+    animation: revealComponent .3s ease forwards;
+}
+.hide-form-event-container {
+    animation: hideComponent .3s ease forwards;
+}
+.form-event {
+    width: 40%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-box);
+    background-image: var(--green-gradient);
+}
+.form-event * {
+    color: white;
+}
+.event-block-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.event-block-form-container input {
+    text-align: center;
+}
+.event-block-form-container input::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+.event-block-form-container label,
+.event-block-form-container input,
+.event-block-form-container textarea,
+.event-block-form-container select {
+    width: 100%;
+}
+.event-block-form-container label {
+    text-align: center;
+    margin-bottom: 5px;
+}
+.event-block-form-container input,
+.event-block-form-container select,
+.event-block-form-container textarea {
+    outline: none;
+    padding: 5px;
+    border: 1px solid var(--main-green);
+    background-color: transparent;
+    border-radius: var(--border-radius-box);
+}
+.event-block-form-container option {
+    color: black;
+    background-color: transparent;
+}
+.event-block-form-container textarea {
+    height: 80px;
+    resize: none;
+}
+.event-form-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.event-form-buttons-container button {
+    width: 40%;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 12px;
+    border: 1px solid var(--main-green);
+    text-transform: uppercase;
+    background-color: transparent;
+    text-shadow: var(--shadow-on-text);
+    border-radius: var(--border-radius-box);
+}
+@media ( max-width: 480px ) {
+    .form-event {
+        width: 85%;
+    }
+    .form-event * {
+        font-size: 10px;
+    }
+    .event-form-buttons-container button {
+        font-size: 8px;
+    }
+}
+@media ( min-width: 480px ) and ( max-width: 1024px ) {
+    .form-event {
+        width: 70%;
+    }
+}
