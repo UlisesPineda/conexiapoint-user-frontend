@@ -14,14 +14,14 @@ export const useAuthUser = () => {
         } catch (error) {
             console.log( error );
             dispatch( onLogOut() );
-            document.cookie = `auth-token=; max-age=0`;
+            document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
             window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
         }
     };
 
     const onStartLogout = () => {
         dispatch( onLogOut() );
-        document.cookie = `auth-token=; max-age=0`;
+        document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
         window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
     };
 
@@ -32,7 +32,7 @@ export const useAuthUser = () => {
         } catch (error) {
             console.log( error );
             dispatch( onLogOut() );
-            document.cookie = `auth-token=; max-age=0`;
+            document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
             window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
         }
     };
