@@ -28,7 +28,7 @@ export const useAuthUser = () => {
     const onRenewToken = async() => {
         try {
             const { data } = await conexiaPointAPI.get( '/auth/renew-token' );
-            document.cookie = `auth-token=${ data.token }; 'max-age=1800; domain=.conexiapoint.com; path=/; samesite=none; secure`;
+            document.cookie = `auth-token=${ data.token }; max-age=1200; domain=.conexiapoint.com; path=/; samesite=none; secure`;
         } catch (error) {
             console.log( error );
             dispatch( onLogOut() );
