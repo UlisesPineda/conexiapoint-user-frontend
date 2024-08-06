@@ -123,8 +123,8 @@
     border-radius: var(--border-radius-box);
     background-color: var(--hover-green);
     text-shadow: var(--shadow-on-text);
-    cursor: pointer;
     box-shadow: var(--shadow-on-box);
+    cursor: pointer;
 }
 @media ( max-width: 480px ) {
     .dashboard-navbar-container {
@@ -153,6 +153,9 @@
     .first-container,
     .second-container {
         width: 70%;
+    }
+    .logout-button {
+        transform: translateY(-60px);
     }
 }
 @media ( min-width: 481px ) and ( max-width: 1024px ) {

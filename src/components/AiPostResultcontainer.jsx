@@ -12,7 +12,7 @@ export const AiPostResultcontainer = () => {
 
   return (
     <div className="ai-block">
-        <big>Publicación solo texto</big>
+        <big>Publicación en formato de texto</big>
         <span className="line-block"></span>
         <div className="ai-result-container">
             {
