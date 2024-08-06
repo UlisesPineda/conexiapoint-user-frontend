@@ -14,6 +14,7 @@ export const DashboardMainPage = () => {
   const currentDayEvents = events.filter( event => formatDateString( event.timeString ) === currentDay );
   const currentMonthEvents = events.filter( event => formatMonthString( event.timeString ) === currentMonth );
 
+
   return (
     <main>
       <section className="dashboard-container">
@@ -26,16 +27,12 @@ export const DashboardMainPage = () => {
             <cite> { dayPhrase.author } </cite>
           </div>
           <div className="dashboard-block">
-            <big>Contactos</big>
-            <span className='line-block'></span>
-            <span className='text-line'> <span>Total de contactos</span> <span> { contacts.length } </span> </span>
-          </div>
-          <div className="dashboard-block">
-            <big>Tu agenda</big>
+            <big>Resumen de Actividades</big>
             <span className='line-block'></span>
             <span className='text-line'> <span>Eventos del día:</span> <span> { currentDayEvents.length } </span> </span>
             <span className='text-line'> <span>Eventos del mes:</span> <span> { currentMonthEvents.length } </span> </span>
             <span className='text-line'> <span>Total de eventos:</span> <span> { events.length } </span> </span>
+            <span className='text-line'> <span>Total de contactos</span> <span> { contacts.length } </span> </span>
           </div>
         </div>
       </section>

@@ -11,5 +11,6 @@ export const getEnvVariables = () => {
         VITE_APP_ID: import.meta.env.VITE_APP_ID,
         VITE_STRIPE_PUBLIC_KEY: import.meta.env.VITE_STRIPE_PUBLIC_KEY,
         VITE_MAIN_SITE_URL: import.meta.env.VITE_MAIN_SITE_URL,
+        VITE_OPENAI_API_KEY: import.meta.env.VITE_OPENAI_API_KEY,
     };
 };

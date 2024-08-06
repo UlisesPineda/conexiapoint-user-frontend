@@ -1,0 +1,131 @@
+.ai-container {
+    min-height: 100vh;
+    width: 87%;
+    margin-left: 13%;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    animation: revealComponent .3s ease-in-out;
+}
+.ai-container p {
+    width: 80%;
+}
+.ai-container * {
+    color: white;
+}
+.ai-block-container {
+    width: 80%;
+    height: auto;
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.ai-block {
+    min-height: 30vh;
+    width: 100%;
+    padding: 40px;
+    border-radius: var(--border-radius-box);
+    background-image: var(--green-gradient);
+    animation: revealComponent .3s ease-in-out;
+}
+.ai-block pre {
+    padding: 30px !important;
+    font-size: 12px;
+}
+.ai-form-container {
+    gap: 20px;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+.ai-form-input-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.ai-input-select {
+    width: 40%;
+    outline: none;
+    display: block;
+    padding: 0 5px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+}
+.ai-input-select option {
+    color: var(--purple-color);
+    font-weight: 500;
+}
+.ai-input-text {
+    width: 40%;
+    height: 30px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+}
+.ai-form-container .ai-button {
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.ai-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.ai-button-container .ai-button,
+.ai-form-marketing .ai-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ai-result-container {
+    padding: 30px 20px;
+}
+.ai-form-marketing {
+    padding-top: 30px;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.ai-form-marketing label,
+.ai-form-marketing input,
+.ai-form-marketing textarea {
+    width: 95%;
+}
+.ai-form-marketing input {
+    height: 30px;
+    text-align: center;
+}
+.ai-form-marketing label {
+    text-align: center;
+}
+.ai-form-marketing textarea {
+    height: 240px;
+    resize: none;
+}
+.ai-form-marketing input,
+.ai-form-marketing textarea {
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--main-green);
+    border-radius: var(--border-radius-box);
+}
+.ai-form-button-container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}

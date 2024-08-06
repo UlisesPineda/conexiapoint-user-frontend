@@ -58,9 +58,8 @@
     background-color: transparent;
     border-radius: var(--border-radius-box);
 }
-.event-block-form-container option {
-    color: black;
-    background-color: transparent;
+.event-block-form-container select option {
+    color: var(--purple-color);
 }
 .event-block-form-container textarea {
     height: 80px;

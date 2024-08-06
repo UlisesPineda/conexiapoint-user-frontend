@@ -15,6 +15,7 @@ export const useAuthUser = () => {
             console.log( error );
             dispatch( onLogOut() );
             document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
+            // document.cookie = `auth-token=; max-age=0`;
             window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
         }
     };
@@ -22,6 +23,7 @@ export const useAuthUser = () => {
     const onStartLogout = () => {
         dispatch( onLogOut() );
         document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
+        // document.cookie = `auth-token=; max-age=0`;
         window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
     };
 
@@ -29,10 +31,12 @@ export const useAuthUser = () => {
         try {
             const { data } = await conexiaPointAPI.get( '/auth/renew-token' );
             document.cookie = `auth-token=${ data.token }; max-age=1200; domain=.conexiapoint.com; path=/; samesite=none; secure`;
+            // document.cookie = `auth-token=${ data.token }; max-age=7200`;
         } catch (error) {
             console.log( error );
             dispatch( onLogOut() );
             document.cookie = `auth-token=; max-age=0; domain=.conexiapoint.com; path=/; samesite=none; secure`;
+            // document.cookie = `auth-token=; max-age=0`;
             window.location.href = `${ import.meta.env.VITE_MAIN_SITE_URL }/entrar`;
         }
     };

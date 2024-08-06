@@ -6,10 +6,12 @@ export const useValidateForm = () => {
 
     const phoneFormat = /^\d{10}$/;
     const nameFormat = /^[a-zA-Z\u00C0-\u02AF\s]{1,30}$/;
+    const productFormat = /^[a-zA-Z0-9ÁÉÍÓÚáéíóúÜüÑñçÇ.,;:!?¿¡()"'° ]{1,100}$/;
     const adressFormat = /^[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ.,;\s]{1,150}$/;
     const enterpriseNameFormat = /^[a-zA-Z\u00C0-\u02AF\s]{1,80}$/;
     const passwordFormat = /^(?=.*[a-zA-Z0-9])(?=.*[/*\-+]).{8,16}$/;
     const noteFormat = /^[a-zA-Z0-9áéíóúüÁÉÍÓÚÜñÑ.,;:!?¿¡()\-"'\s]{1,600}$/;
+    const keywordsFormat = /^[a-zA-ZÀ-ÖØ-öø-ÿĀ-ſ ,]{1,200}$/;
     const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
@@ -89,18 +91,29 @@ export const useValidateForm = () => {
             return;
         }
         return true;
-    }
-    // const comparePasswords = ( password, confirmPassword ) => {
-    //     if ( password !== confirmPassword ) {
-    //         startActivateMessage({
-    //             title: 'Los passwords no coinciden',
-    //             message: 'Verifica que los passwords sean iguales',
-    //             isHidenButton: false,
-    //         });
-    //         return;
-    //     }
-    //     return true;
-    // };
+    };
+    const validateProduct = ( product ) => {
+        if( !productFormat.test( product ) ) {
+            startActivateMessage({ 
+                title: 'El formato del producto es inválido', 
+                message: 'El nombre de producto solo acepta letras, no debe ser mayor a 100 caracteres y no acepta caracteres especiales', 
+                isHidenButton: false,
+            });
+            return;
+        }
+        return true;
+    };
+    const validateKeywords = ( keywords ) => {
+        if( !keywordsFormat.test( keywords ) ) {
+            startActivateMessage({
+                title: 'El formato de las palabras clave es incorrecto',
+                message: 'Las palabras clave no acepta caracteres especiales con un máximo de 200 caracteres',
+                isHidenButton: false,
+            });
+            return;
+        }
+        return true;
+    };
     const validateEmptyInput = ( form, title ) => {
         for (let value in form) {
             if (Object.prototype.hasOwnProperty.call(form, value)) {
@@ -202,7 +215,7 @@ export const useValidateForm = () => {
             if( !validationResult ) return validationResult;
         }
         if( adressEvent ) {
-            validationResult = validateAdress( adressEvent )
+            validationResult = validateAdress( adressEvent );
                 if( !validationResult ) return validationResult;
         }
         if( emailEvent ) {
@@ -257,6 +270,36 @@ export const useValidateForm = () => {
         }
     };
 
+    const validateAiForm = ( form ) => {
+        const { product } = form;
+        return validateEmptyInput( 
+            form, 
+            'Para generar tu consulta debes llenar todos los campos',
+        ) &&
+            validateProduct( product );
+    };
+
+    const validatePostForm = ( form ) => {
+        const { title, keywords } = form;
+        return validateEmptyInput(
+            form,
+            'Para crear la publicación es necesario llenar todos los campos'
+        ) &&
+            validateProduct( title ) &&
+                validateKeywords( keywords );
+    };
+
+    const validateEmailForm = ( form ) => {
+        const { email, recipient, item } = form;
+        return validateEmptyInput(
+            form,
+            'Para crear el correo es necesario llenar todos los campos'
+        ) &&
+            validateEmail( email ) && 
+                validateName( recipient ) &&
+                 validateProduct( item );
+    };
+
 
     return {        
         validateEmptyInput,
@@ -266,5 +309,8 @@ export const useValidateForm = () => {
         validateEventForm,
         validateSettingsForm,
         validateNote,
+        validateAiForm,
+        validatePostForm,
+        validateEmailForm,
     };
 };

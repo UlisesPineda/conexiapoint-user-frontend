@@ -4,7 +4,7 @@ export const useForm = ( initForm ) => {
 
     const [form, setForm] = useState( initForm );
     const [isDisabled, setIsDisabled] = useState( false );
-    const [avatarImgForm, setAvatarImgForm] = useState( [] );
+    const [imageForm, setImageForm] = useState( [] );
 
     const handleChange = ( { target } ) => {
         const { name, value } = target;
@@ -19,7 +19,7 @@ export const useForm = ( initForm ) => {
     };
     
     const handleFileChange = ( e ) => {
-        setAvatarImgForm( e.target.files );
+        setImageForm( e.target.files );
     };
 
     const disableButtonForm = () => {
@@ -38,7 +38,7 @@ export const useForm = ( initForm ) => {
         resetForm,
         handleChange,
 
-        avatarImgForm,
+        imageForm,
         handleFileChange,
 
         isDisabled,

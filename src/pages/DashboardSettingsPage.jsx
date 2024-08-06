@@ -26,7 +26,7 @@ export const DashboardSettingsPage = () => {
     form, 
     handleChange, 
     resetForm, 
-    avatarImgForm, 
+    imageForm, 
     handleFileChange,
     isDisabled,
     disableButtonForm,
@@ -62,7 +62,7 @@ export const DashboardSettingsPage = () => {
         break;
       case 'settingsFile':
           disableButtonForm() &&
-            await onChangeUserAvatar( avatarImgForm[0], user._id ) &&
+            await onChangeUserAvatar( imageForm[0], user._id ) &&
               handleCloseSettingsForm() & enableButtonForm();
         break;
     }
@@ -77,7 +77,7 @@ export const DashboardSettingsPage = () => {
 
   const handleEditSettingsForm = (e) => {
     e.preventDefault();
-    validateSettingsForm( dataSettingType, form, avatarImgForm ) &&
+    validateSettingsForm( dataSettingType, form, imageForm ) &&
       selectSettingAction();
   };
   

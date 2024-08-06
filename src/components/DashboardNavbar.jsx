@@ -34,32 +34,38 @@ export const DashboardNavbar = () => {
                         to='/escritorio'
                     >
                         <span className='icon-dashboard desk'></span>
-                        <span className='text-link'>ESCRITORIO</span>
+                        <span className='text-link'>Escritorio</span>
+                    </NavLink>
+                    <NavLink
+                        to='/asistente'
+                    >
+                        <span className='icon-dashboard ai'></span>
+                        <span className='text-link'>Asistente</span>
                     </NavLink>
                     <NavLink
                         to='/contactos'
                     >
                         <span className='icon-dashboard contact'></span>
-                        <span className='text-link'>CONTACTOS</span>
+                        <span className='text-link'>Contactos</span>
                     </NavLink>
                     <NavLink
                         to='/agenda'
                     >
                         <span className='icon-dashboard calendar'></span>
-                        <span className='text-link'>AGENDA</span>
+                        <span className='text-link'>Agenda</span>
                     </NavLink>
                     <NavLink
                         to='/configuracion'
                     >
                         <span className='icon-dashboard setting'></span>
-                        <span className='text-link'>AJUSTES</span>
+                        <span className='text-link'>Ajustes</span>
                     </NavLink>
                     <NavLink
                         to='/feedback'
                         title='¡Tu opinión nos interesa!'
                     >
                         <span className='icon-dashboard feedback'></span>
-                        <span className='text-link'>FEEDBACK</span>
+                        <span className='text-link'>Feedback</span>
                     </NavLink>
                 </div>
             </header>

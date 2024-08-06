@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { 
+    aiSlice,
     alertMessageSlice, 
     authUserSlice, 
     contactDataSlice,
@@ -9,8 +10,9 @@ import {
 export const store = configureStore({
     reducer: {
         alertMessage: alertMessageSlice.reducer,
-        authUser: authUserSlice.reducer,
         contactData: contactDataSlice.reducer,
         eventData: eventDataSlice.reducer,
+        authUser: authUserSlice.reducer,
+        ai: aiSlice.reducer,
     },
 });
