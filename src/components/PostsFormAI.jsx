@@ -4,8 +4,8 @@ import { useAI } from "../hooks/useAI";
 
 export const PostsFormAI = () => {
 
+    const { createBlogArticle, cleanAiSearch } = useAI();
     const { validatePostForm } = useValidateForm();
-    const { createBlogArticle } = useAI();
 
     const { form, handleChange, resetForm } = useForm({
         title: '',
@@ -15,7 +15,8 @@ export const PostsFormAI = () => {
     const handlePostsAiForm = async(e) => {
         e.preventDefault();
         validatePostForm( form ) &&
-            await createBlogArticle( form ) & resetForm();
+            cleanAiSearch() &&
+                await createBlogArticle( form ) & resetForm();
     };
 
   return (

@@ -10,6 +10,5 @@ export * from './AiResultContainer';
 export * from './BussinesFormIA';
 export * from './PostsFormAI';
 export * from './BuyerPersonFormAI';
-export * from './ProductDescriptionFormAI';
 export * from './EmailMarketingFormAI';
 export * from './AiPostResultcontainer';

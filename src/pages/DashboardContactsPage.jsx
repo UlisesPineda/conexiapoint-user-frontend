@@ -4,6 +4,7 @@ import './styles/DashboardContactsPage.css';
 
 import { useAuthUser, useContactData, useForm, useValidateForm } from '../hooks';
 import { AddContactContainer, SelectedContactContainer } from '../components';
+import { useEffect } from 'react';
 
 export const DashboardContactsPage = () => {
 
@@ -41,7 +42,10 @@ export const DashboardContactsPage = () => {
     startAddContact();
   };
   
-  onRenewToken();
+  useEffect(() => {
+    onRenewToken();
+  }, []);
+  
 
   return (
     <main>

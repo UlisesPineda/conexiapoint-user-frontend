@@ -6,7 +6,7 @@ import { useAI } from "../hooks/useAI";
 
 export const AiEmailMarketingContainer = () => {
 
-    const { sendEmailMarketing } = useAI();
+    const { sendEmailMarketing, cleanAiSearch } = useAI();
     const { queryResult, isEmailMarketing } = useSelector( state => state.ai );
     const { form, handleChange, setForm, resetForm } = useForm({
         email: '',
@@ -66,14 +66,27 @@ export const AiEmailMarketingContainer = () => {
                 <button
                     type="button"
                     className="secondary-button ai-button"
+                    onClick={ cleanAiSearch }
                 >
-                    Cancelar
+                    <span
+                        className="icon-secondary-button clean"
+                    >
+                    </span>
+                    <span className="text-secondary-button">
+                        Cancelar
+                    </span>
                 </button>
                 <button
                     type="submit"
                     className="secondary-button ai-button"
                 >
-                    Enviar Correo    
+                    <span
+                        className="icon-secondary-button sendmail"
+                    >
+                    </span>
+                    <span className="text-secondary-button">
+                        Enviar Correo    
+                    </span>
                 </button>
             </div>
         </form>

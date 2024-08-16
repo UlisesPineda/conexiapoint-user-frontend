@@ -44,14 +44,28 @@ export const AiResultContainer = () => {
                 className='secondary-button ai-button'
                 onClick={ cleanAiSearch }
             >
-                Limpiar resultados
+                <span 
+                    className="icon-secondary-button clean"
+                >
+                </span>
+                <span className="text-secondary-button">
+                    Limpiar resultados
+                </span>
             </button>
             <button
                 className='secondary-button ai-button'
-                onClick={ () => generatePdf( queryResult, `${ isFound && 'bussines-estrategy' || isBuyerperson && 'buyer-person' }` ) }
+                onClick={ 
+                    () => generatePdf( queryResult, `${ isFound && 'bussines-estrategy' || isBuyerperson && 'buyer-person' }` ) 
+                }
                 title="Descargar documento"
             >
-                Generar PDF
+                <span 
+                    className="icon-secondary-button pdf"
+                >
+                </span>
+                <span className="text-secondary-button">
+                    Generar PDF
+                </span>
             </button>
         </div>
     </div>

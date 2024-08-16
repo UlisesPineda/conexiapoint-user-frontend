@@ -7,14 +7,22 @@ import {
     BussinesFormIA, 
     BuyerPersonFormAI, 
     EmailMarketingFormAI, 
-    PostsFormAI, 
-    // ProductDescriptionFormAI,
+    PostsFormAI,
 } from '../components';
 import { AiEmailMarketingContainer } from '../components/AiEmailMarketingContainer';
+import { useAuthUser } from '../hooks';
+import { useEffect } from 'react';
 
 export const DashboardAiPage = () => {
 
     const { isFound, isBuyerperson, isPost, isEmailMarketing } = useSelector( state => state.ai );
+
+    const { onRenewToken } = useAuthUser();
+
+    useEffect(() => {
+        onRenewToken();
+    }, []);
+    
 
   return (
     <main>

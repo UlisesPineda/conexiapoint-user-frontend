@@ -7,13 +7,14 @@ export const BussinesFormIA = () => {
         topic: '',
         product: '',
     });
-    const { generateBussinesQuery } = useAI();
+    const { generateBussinesQuery, cleanAiSearch } = useAI();
     const { validateAiForm } = useValidateForm();
 
     const handleBussinesAiForm = async(e) => {
         e.preventDefault();
         validateAiForm( form ) &&
-            await generateBussinesQuery( form ) & resetForm();   
+            cleanAiSearch() &&
+                await generateBussinesQuery( form ) & resetForm();   
     };
 
   return (

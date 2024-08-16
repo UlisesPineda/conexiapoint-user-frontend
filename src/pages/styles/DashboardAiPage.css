@@ -80,9 +80,30 @@
     padding-right: 15px;
 }
 .ai-button-container {
+    margin-top: 30px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+.icon-secondary-button {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.clean {
+    background-image: url(/img/clear.png);
+}
+.copy {
+    background-image: url(/img/copy.png);
+}
+.pdf {
+    background-image: url(/img/pdf.png);
+}
+.sendmail {
+    background-image: url(/img/sendmail.png);
 }
 .ai-button-container .ai-button,
 .ai-form-marketing .ai-button {
@@ -130,6 +151,15 @@
     justify-content: space-between;
 }
 
+@media ( min-width: 481px ) {
+    .text-secondary-button {
+        display: block;
+    }
+    .icon-secondary-button {
+        display: none;
+    }
+}
+
 @media ( max-width: 480px ) {
     .ai-container * {
         font-size: 12px;
@@ -141,6 +171,10 @@
     }
     .ai-block {
         padding: 20px;
+    }
+    .ai-form-button-container,
+    .ai-button-container {
+        justify-content: space-around;
     }
     .ai-form-input-container {
         flex-direction: column;
@@ -159,6 +193,9 @@
     }
     .ai-form-container button {
         font-size: 10px;
+    }
+    .text-secondary-button {
+        display: none;
     }
     .ai-result-container {
         padding: 15px 0px;

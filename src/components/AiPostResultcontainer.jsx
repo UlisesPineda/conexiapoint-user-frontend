@@ -1,14 +1,23 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
+
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { useAI } from "../hooks/useAI";
 import { generatePdf } from "../helpers";
 
 export const AiPostResultcontainer = () => {
 
+    const [copyHtml, setCopyHtml] = useState( false );
+
     const { queryResult, htmlPost } = useSelector( state => state.ai );
     const { cleanAiSearch } = useAI();
+
+    const handleCopyClipboard = () => {
+        setCopyHtml( true );
+    };
 
   return (
     <div className="ai-block">
@@ -47,14 +56,41 @@ export const AiPostResultcontainer = () => {
                 className='secondary-button ai-button'
                 onClick={ cleanAiSearch }
             >
-                Limpiar resultados
+                <span
+                    className="icon-secondary-button clean"
+                >
+                </span>
+                <span className="text-secondary-button">
+                    Limpiar resultados
+                </span>
             </button>
+            <CopyToClipboard text={ htmlPost }>
+                <button
+                    className='secondary-button ai-button'
+                    onClick={ handleCopyClipboard }
+                    title={ copyHtml ? '¡HTML Copiado!' : 'Copiar HTML' }
+                >
+                    <span
+                        className="icon-secondary-button copy"
+                    >
+                    </span>
+                    <span className="text-secondary-button">
+                        { copyHtml ? '¡HTML Copiado!' : 'Copiar HTML' }
+                    </span>
+                </button>
+            </CopyToClipboard>
             <button
                 className='secondary-button ai-button'
                 onClick={ () => generatePdf( queryResult, 'posted-article' ) }
                 title="Descargar documento"
             >
-                Generar PDF
+                <span
+                    className="icon-secondary-button pdf"
+                >
+                </span>
+                <span className="text-secondary-button">
+                    Generar PDF
+                </span>
             </button>
         </div>
     </div>

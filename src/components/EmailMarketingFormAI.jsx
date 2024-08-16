@@ -4,8 +4,8 @@ import { useAI } from "../hooks/useAI";
 
 export const EmailMarketingFormAI = () => {
 
+    const { createEmailMarketing, cleanAiSearch } = useAI();
     const { validateEmailForm } = useValidateForm();
-    const { createEmailMarketing } = useAI();
     const { form, handleChange, resetForm } = useForm({
         email: '',
         item: '',
@@ -15,7 +15,8 @@ export const EmailMarketingFormAI = () => {
     const handleEmailMktForm = async(e) => {
         e.preventDefault();
         validateEmailForm( form ) &&
-            await createEmailMarketing( form ) & resetForm();
+            cleanAiSearch() &&
+                await createEmailMarketing( form ) & resetForm();
     };
 
   return (

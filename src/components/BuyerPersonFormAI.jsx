@@ -4,7 +4,7 @@ import { useAI } from "../hooks/useAI";
 
 export const BuyerPersonFormAI = () => {
 
-    const { identifyBuyerPerson } = useAI();
+    const { identifyBuyerPerson, cleanAiSearch } = useAI();
     const { validateAiForm } = useValidateForm();
     const { form, handleChange, resetForm } = useForm({
         product: ''
@@ -13,7 +13,8 @@ export const BuyerPersonFormAI = () => {
     const handleBuyerPersonaForm = async(e) => {
         e.preventDefault();
         validateAiForm( form ) &&
-            await identifyBuyerPerson( form ) & resetForm();
+            cleanAiSearch() &&
+                await identifyBuyerPerson( form ) & resetForm();
     };
 
   return (

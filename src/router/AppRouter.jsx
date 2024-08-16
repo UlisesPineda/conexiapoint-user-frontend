@@ -49,11 +49,11 @@ export const AppRouter = () => {
           <DashboardLayout>
             <Routes>
               <Route path="/escritorio" element={ <DashboardMainPage /> } />
+              <Route path="/asistente" element={ <DashboardAiPage /> } />
               <Route path="/contactos" element={ <DashboardContactsPage /> } />
               <Route path="/agenda" element={ <DashboardEventsPage /> } />
               <Route path="/configuracion" element={ <DashboardSettingsPage /> } />
               <Route path="/feedback" element={ <DashboardFeedbackPage /> } />
-              <Route path="/asistente" element={ <DashboardAiPage /> } />
               <Route path="/*" element={ <Navigate to="/escritorio" /> } />
             </Routes>
           </DashboardLayout> 
